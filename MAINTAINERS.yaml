@@ -1,0 +1,15 @@
+- name: Ashish Padhy
+  github: Shurtu-gal
+  linkedin: ashish-padhy3023
+  slack: U06QFSWLDA6
+  twitter: Shurtu_Gal
+  availableForHire: true
+  isTscMember: true
+  repos:
+    - github-action-for-cli
+- name: Anurup Chandra Mondal
+  slack: U06R6V51YSC
+  github: anurupchandra
+- name: Sourav Behera
+  slack: U06Q3J4SR5M
+  github: souravbehera
