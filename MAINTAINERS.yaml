@@ -30,7 +30,7 @@
     - website
     - new-repo
 - name: Sergio Moya
-  slack: U01UJ9M8CSF
+  slack: U06R27M7PHP
   isTscMember: true
   repos:
     - new-repo
