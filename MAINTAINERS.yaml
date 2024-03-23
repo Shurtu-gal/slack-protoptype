@@ -28,3 +28,10 @@
   repos:
     - github-action-for-cli
     - website
+    - new-repo
+- name: Sergio Moya
+  slack: U01UJ9M8CSF
+  isTscMember: true
+  repos:
+    - new-repo
+    - another-repo
