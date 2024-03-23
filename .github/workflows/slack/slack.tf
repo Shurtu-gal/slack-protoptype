@@ -17,3 +17,19 @@ variable "slack_token" {
 provider "slack" {
   token = var.slack_token
 }
+
+module "users" {
+  source = "./users"
+}
+
+module "channels" {
+  source = "./channels"
+  depends_on = [ module.users ]
+  data_sources = module.users.data_sources
+}
+
+module "groups" {
+  source = "./groups"
+  depends_on = [ module.users ]
+  data_sources = module.users.data_sources
+}

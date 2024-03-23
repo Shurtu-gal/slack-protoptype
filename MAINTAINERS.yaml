@@ -10,9 +10,21 @@
 - name: Anurup Chandra Mondal
   slack: U06R6V51YSC
   github: anurupchandra
+  isTscMember: true
+  repos:
+    - website
 - name: Sourav Behera
   slack: U06Q3J4SR5M
   github: souravbehera
+  repos:
+    - website
 - name: Ashish Padhy
-  slack: U06QWQKA51P
   github: Shurtu-gal
+  linkedin: ashish-padhy3023
+  slack: U06QWQKA51P
+  twitter: Shurtu_Gal
+  availableForHire: true
+  isTscMember: true
+  repos:
+    - github-action-for-cli
+    - website
