@@ -26,10 +26,12 @@ module "channels" {
   source = "./channels"
   depends_on = [ module.users ]
   data_sources = module.users.data_sources
+  channel_data = yamldecode(file("${path.module}/channels/channels.yaml"))
 }
 
 module "groups" {
   source = "./groups"
   depends_on = [ module.users ]
   data_sources = module.users.data_sources
+  groups_data = yamldecode(file("${path.module}/groups/groups.yaml"))
 }
