@@ -17,28 +17,16 @@ variable "data_sources" {
   description = "Data sources for the slack channels from the users module"
 }
 
-variable "channel_data" {
-  description = "The data for the slack channels"
-  type = list(object({
-    name = string
-    topic = string
-    purpose = string
-    is_private = bool
-    action_on_destroy = string
-    permanent_members = optional(list(string))
-    data_source = optional(string)
-  }))
-}
-
 locals {
+  channel_data = yamldecode(file("${path.module}/channels.yaml"))
   channels = {
-    for channel in var.channel_data : channel.name => {
+    for channel in local.channel_data : channel.name => {
       name = channel.name
       topic = channel.topic
       purpose = channel.purpose
 
       # if permanent_members is not provided, then it wil be taken from local with the name in data sources
-      permanent_members = lookup(channel, "permanent_members", lookup(var.data_sources, lookup(channel, "data", channel.name), []))
+      permanent_members = lookup(channel, "permanent_members", lookup(var.data_sources, lookup(channel, "data_source", channel.name), []))
       is_private = channel.is_private
       action_on_destroy = channel.action_on_destroy
 

@@ -7,12 +7,12 @@
 # is_private - (Optional) create a private channel instead of a public one.
 # is_archived - (Optional) indicates a conversation is archived. Frozen in time.
 # action_on_destroy - (Optional, Default archive) indicates whether the conversation should be archived or left behind on destroy. Valid values are archive | none. Note that when set to none the conversation will be left as it is and as a result any subsequent runs of terraform apply with the same name will fail.
-# data - (Optional) data source to use for the list of user IDs to add to the channel. Valid values are maintainers_user_ids | ambassadors_user_ids | tsc_user_ids right now.
+# data_source - (Optional) data_source source to use for the list of user IDs to add to the channel. Valid values are maintainers_user_ids | ambassadors_user_ids | tsc_user_ids right now.
 
 # NOTE:-
 # 1. The channel name should be unique.
 # 2. The user IDs should be valid and should be present in the workspace.
-# 3. Either permanent_members or data should be provided to add users to the channel.
+# 3. Either permanent_members or data_source should be provided to add users to the channel.
 # 4. The default value for change in permanent_members is kick for private channels and nothing for public channels.
 # 5. The default value for adopt_current_channels is true.
 
@@ -31,7 +31,7 @@
 - name: maintainers
   topic: Private channel for maintainers of the test environment
   purpose: A private channel for the maintainers of the test environment to discuss and share information.
-  data: maintainers_user_ids
+  data_source: maintainers_user_ids
   is_private: true
   is_archived: false
   action_on_destroy: archive
@@ -39,7 +39,7 @@
 - name: ambassadors
   topic: Private channel for ambassadors of the test environment
   purpose: A private channel for the ambassadors of the test environment to discuss and share information.
-  data: ambassadors_user_ids
+  data_source: ambassadors_user_ids
   is_private: true
   is_archived: false
   action_on_destroy: archive

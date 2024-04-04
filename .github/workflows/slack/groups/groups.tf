@@ -17,20 +17,10 @@ variable "data_sources" {
   description = "Data sources for the slack groups from the users module"
 }
 
-variable "groups_data" {
-  description = "The data for the slack groups"
-  type = list(object({
-    name = string
-    handle = string
-    description = string
-    data_source = optional(string)
-    users = optional(list(string))
-  }))
-}
-
 locals {
+  groups_data = yamldecode(file("${path.module}/groups.yaml"))
   groups = {
-    for group in var.groups_data : group.name => {
+    for group in local.groups_data : group.name => {
       name = group.name
       handle = group.handle
       description = group.description
