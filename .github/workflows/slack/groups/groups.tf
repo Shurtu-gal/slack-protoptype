@@ -18,9 +18,9 @@ variable "data_sources" {
 }
 
 locals {
-  groups_data = yamldecode(file("${path.module}/groups.yaml"))
+  group_data = yamldecode(file("${path.module}/groups.yaml"))
   groups = {
-    for group in local.groups_data : group.name => {
+    for group in local.group_data : group.name => {
       name = group.name
       handle = group.handle
       description = group.description
@@ -43,4 +43,26 @@ resource "slack_usergroup" "maintainer_repos" {
   handle = "maintainer_${each.key}"
   description = "Maintainers for ${each.key}"
   users = each.value
+}
+
+locals {
+  wg_groups_data = yamldecode(file("${path.module}/../../../../WORKING_GROUPS.yaml")).working_groups
+  wg_groups = {
+    for wg_channel in local.wg_groups_data : wg_channel.name => {
+      name = wg_channel.name
+      description = lookup(wg_channel, "slack_description", lookup(wg_channel, "description", ""))
+
+      # Handle will be the name of the group in lowercase and with spaces replaced by underscores preceded by "asyncapi/"
+      handle = lookup(wg_channel, "slack_group_name", "asyncapi/${replace(lower(wg_channel.name), " ", "_")}")
+      users = concat([wg_channel.chairperson.slack], [for member in wg_channel.members : member.slack])
+    }
+  }
+}
+
+resource "slack_usergroup" "wg_groups" {
+  for_each = local.wg_groups
+  name = each.value.name
+  handle = each.value.handle
+  description = each.value.description
+  users = each.value.users  
 }

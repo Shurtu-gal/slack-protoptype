@@ -5,10 +5,39 @@
 working_groups:
   # - name: Required. The name of the working group.
   #   description: Required. Describe what this working group is about.
-  #   chairperson: Required. GitHub handle of the chairperson. Example: @Barbanio.
+  #   chairperson: 
+  #     name: Fran Méndez        # Required. Name of the chairperson.
+  #     github: '@fmvilas'       # Required. GitHub handle of the chairperson.
+  #     slack: U34F2JRRS         # Required. Slack user ID of the chairperson.
   #   members: # Required to have at least 2 members who are not the same as the chairperson.
-  #     - @fmvilas # GitHub handle of the member.
+  #     - name: Sergio Moya        # Required. Name of the member.
+  #       github: '@smoya'         # Required. GitHub handle of the member.
+  #       slack: UN22ZTLHG         # Required. Slack user ID of the member.
   #   slack_channel: # Required. The name of the Slack channel in the AsyncAPI workspace. Example: community_growth_wg
+  #   slack_description: # Recommended. A brief description of the working group to be used in the Slack channel description. ( If not provided, the description will be used.)
+  #   slack_topic: # Optional. A brief description of the working group to be used in the Slack channel topic. ( If not provided, will be empty.)
+  #   slack_group_name: # Optional. The name of the Slack group in the AsyncAPI workspace. Example: @asyncapi/community_growth_wg (If not provided, the group will be in the format of wg-<working-group-name>. Also the name should be unique among all channels and groups in the workspace.)
   #   okrs_url: https://example.com/xyz # Required. Link to a GitHub project, issue, or any other tool where the Working Group explains their objectives.
   #   roadmap_url: https://example.com/xyz # Recommended. Link to a GitHub project, issue, or any other tool where the Working Group outlines their roadmap.
   #   github_team: # Recommended. The GitHub team handle to tag all the working group members at once. Example: @asyncapi/community_growth_wg.
+ 
+- name: Developer Experience
+  description: The goal of this group is to empower AsyncAPI user journey trough intuitive onboarding, tools, and a frictionless experience.
+  chairperson: 
+    name: Ashish Padhy
+    github: '@garble'
+    slack: U06QFSWLDA6
+  members:
+    - name: Sourav Behera
+      github: '@pakisan'
+      slack: U06Q3J4SR5M
+    - name: Sergio
+      github: '@KhudaDad414'
+      slack: U06R27M7PHP
+  slack_channel: developer-experience-wg
+  slack_description: The goal of this group is to empower AsyncAPI user journey trough intuitive onboarding, tools, and a frictionless experience.
+  slack_topic: 'Current Roadmap: <https://shapeit.app/projects/org/asyncapi/16/cycles/ceb40c9d?issue=I_kwDOLQFNzc5-xigF>'
+  slack_group_name: wg-developer-experience
+  roadmap_url: https://shapeit.app/projects/org/asyncapi/16
+  okrs_url: https://github.com/users/Amzani/projects/12/views/1
+  github_team: '@asyncapi/developer_experience_wg'
