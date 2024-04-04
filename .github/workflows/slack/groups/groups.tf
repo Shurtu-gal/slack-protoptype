@@ -52,8 +52,8 @@ locals {
       name = wg_channel.name
       description = lookup(wg_channel, "slack_description", lookup(wg_channel, "description", ""))
 
-      # Handle will be the name of the group in lowercase and with spaces replaced by underscores preceded by "asyncapi/"
-      handle = lookup(wg_channel, "slack_group_name", "asyncapi/${replace(lower(wg_channel.name), " ", "_")}")
+      # Handle will be the name of the group in lowercase and with spaces replaced by underscores preceded by "wg_"
+      handle = lookup(wg_channel, "slack_group_name", "wg_${replace(lower(wg_channel.name), " ", "_")}")
       users = concat([wg_channel.chairperson.slack], [for member in wg_channel.members : member.slack])
     }
   }
