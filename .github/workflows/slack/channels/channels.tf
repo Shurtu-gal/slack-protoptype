@@ -54,7 +54,7 @@ locals {
   wg_channel_data = yamldecode(file("${path.module}/../../../../WORKING_GROUPS.yaml")).working_groups
   wg_channels = {
     for wg_channel in local.wg_channel_data : wg_channel.name => {
-      name = lookup(wg_channel, "slack_channel_name", wg_channel.name)
+      name = lookup(wg_channel, "slack_channel", wg_channel.name)
       purpose = lookup(wg_channel, "slack_description", lookup(wg_channel, "description", ""))
       topic = lookup(wg_channel, "slack_topic", "")
 
