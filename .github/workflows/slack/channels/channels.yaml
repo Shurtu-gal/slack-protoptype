@@ -29,7 +29,7 @@
   action_on_destroy: archive
 
 - name: maintainers
-  topic: Private channel for maintainers of the test environment
+  topic: Private channel for maintainers of the test environment check if description of general changes.
   purpose: A private channel for the maintainers of the test environment to discuss and share information.
   data_source: maintainers_user_ids
   is_private: true
