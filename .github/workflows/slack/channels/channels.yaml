@@ -130,7 +130,7 @@
 
 - name: 13_docs
   topic: null
-  purpose: ':bookmark_tabs: Discuss AsyncAPI Docs: Feel free to open issues for documentation requests and to share ideas/feedback on open issues. <https://github.com/orgs/asyncapi/projects/8>'
+  purpose: 'test bookmark still stays after change in self :bookmark_tabs: Discuss AsyncAPI Docs: Feel free to open issues for documentation requests and to share ideas/feedback on open issues. <https://github.com/orgs/asyncapi/projects/8>'
   is_private: false
   is_archived: false
   action_on_destroy: archive
