@@ -18,7 +18,7 @@
 
 - name: random-test
   topic: Non-work banter and water cooler conversation
-  purpose: A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.
+  purpose: Test if bookmark still stays. A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.
   permanent_members:
     - U06QFSWLDA6
     - U06R6V51YSC
