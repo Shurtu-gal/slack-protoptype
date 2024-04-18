@@ -6,6 +6,7 @@ on:
       - '**/slack/**/*'
       - 'AMBASSADORS.json'
       - 'MAINTAINERS.yaml'
+      - 'WORKING_GROUPS.yaml'
   
 jobs:
   deploy-changes-to-slack:
