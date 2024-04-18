@@ -28,9 +28,6 @@ working_groups:
     github: '@garble'
     slack: U06QFSWLDA6
   members:
-    - name: Sourav Behera
-      github: '@pakisan'
-      slack: U06Q3J4SR5M
     - name: Sergio
       github: '@KhudaDad414'
       slack: U06R27M7PHP
